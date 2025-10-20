@@ -1,24 +1,29 @@
 export default function About() {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center bg-white py-20">
+    <section id="about" className="min-h-screen flex items-center justify-center bg-muted py-[10px]">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-12 text-center">
-          About Us
+        <h2 className="text-4xl md:text-5xl font-bold text-[var(--cf-dark-green)] mb-8 text-center">
+          ABOUT CULTURE FARMS — ROOTED IN SOIL, GROWN WITH PURPOSE
         </h2>
-        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-          <p className="text-center md:text-left">
-            At Culture Farms, we are dedicated to bringing you the finest natural and organic products, 
-            grown with care and respect for the environment. Our commitment to sustainable farming 
-            practices ensures that every product we offer is not only good for you but also good for the planet.
+
+        <div className="space-y-6 text-lg text-[var(--cf-dark-green)] leading-relaxed">
+          <p className="font-semibold">
+            <em>At Culture Farms</em>, we believe that true wellness begins in the soil.
           </p>
-          <p className="text-center md:text-left">
-            We specialize in premium quality organic products including our signature Moringa Powder, 
-            traditional Unpolished Indrayani Rice, and nutrient-rich Organic Soyabean. Each product is 
-            carefully cultivated and processed to maintain its natural goodness and nutritional value.
+
+          <p>
+            Every packet you open carries the effort of Indian farmers who cultivate with love, not chemicals.
+            We work directly with local growers from the Sahyadri region, ensuring fair prices, sustainable
+            practices, and pure quality from seed to shelf.
           </p>
-          <p className="text-center md:text-left">
-            Our mission is to promote healthy living through access to pure, unadulterated organic products 
-            that support your wellness journey while supporting local farming communities.
+
+          <p>
+            When you choose Culture Farms, you don’t just buy a health product — you support a movement that
+            empowers farmers, revives traditional agriculture, and brings India’s natural goodness to every home.
+          </p>
+
+          <p className="mt-6 italic font-semibold text-[var(--cf-mid-green)]">
+            From our farms to your kitchen — we grow wellness, together.
           </p>
         </div>
       </div>
