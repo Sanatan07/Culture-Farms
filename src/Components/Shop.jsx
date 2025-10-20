@@ -1,10 +1,10 @@
 import { Leaf } from 'lucide-react';
-import moringa1 from '../assets/moringa1.jpg';
-import moringa2 from '../assets/moringa2.jpg';
-import beetroot1 from '../assets/beetroot1.jpg';
-import beetroot2 from '../assets/beetroot2.jpg';
-import jamun1 from '../assets/jamun1.jpg';
-import jamun2 from '../assets/jamun2.jpg';
+import moringa1 from '../../public/assets/moringa1.jpg';
+import moringa2 from '../../public/assets/moringa2.jpg';
+import beetroot1 from '../../public/assets/beetroot1.jpg';
+import beetroot2 from '../../public/assets/beetroot2.jpg';
+import jamun1 from '../../public/assets/jamun1.jpg';
+import jamun2 from '../../public/assets/jamun2.jpg';
 
 export default function Shop() {
   const products = [

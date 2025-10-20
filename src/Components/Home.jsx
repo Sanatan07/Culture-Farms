@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
-import pic1 from '../assets/pic1.jpg';
-import pic2 from '../assets/pic2.jpg';
-import pic3 from '../assets/pic3.jpg';
-import pic4 from '../assets/pic4.jpg';
-import pic5 from '../assets/pic5.jpg';
-import pic6 from '../assets/pic6.jpg';
-import pic7 from '../assets/pic7.jpg';
-import pic8 from '../assets/pic8.jpg';
-import pic9 from '../assets/pic9.jpg';
-import pic10 from '../assets/pic10.jpg';
-import pic11 from '../assets/pic11.jpg';
-import pic12 from '../assets/pic12.jpg';
-import pic13 from '../assets/pic13.jpg';
+import pic1 from '../../public/assets/pic1';
+import pic2 from '../../public/assets/pic2';
+import pic3 from '../../public/assets/pic3';
+import pic4 from '../../public/assets/pic4';
+import pic5 from '../../public/assets/pic5';
+import pic6 from '../../public/assets/pic6';
+import pic7 from '../../public/assets/pic7';
+import pic8 from '../../public/assets/pic8';
+import pic9 from '../../public/assets/pic9';
+import pic10 from '../../public/assets/pic10';
+import pic11 from '../../public/assets/pic11';
+import pic12 from '../../public/assets/pic12';
+import pic13 from '../../public/assets/pic13';
 
 export default function Home() {
   const images = [
