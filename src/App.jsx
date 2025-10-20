@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Shop from './Components/Shop';
 import Footer from './Components/Footer';
+import WhatsAppButton from './Components/WhatsAppButton';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <About />
       <Shop />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
 
-export default App; 
+export default App;

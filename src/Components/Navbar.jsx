@@ -7,9 +7,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -22,77 +20,45 @@ export default function Navbar() {
     }
   };
 
+  const navBg = isScrolled
+    ? 'bg-[var(--cf-bg)]/90 backdrop-blur-sm border-b border-[rgba(14,138,74,0.04)]'
+    : 'bg-transparent';
+  const textColor = isScrolled ? 'text-cf-dark' : 'text-white';
+
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gradient-to-r from-green-700 to-green-600 shadow-lg' : 'bg-gradient-to-r from-green-700/95 to-green-600/95 backdrop-blur-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
-            <img 
-              src={logo}
-              alt="Culture Farms Logo" 
-              className="h-16 w-auto"
-            />
-          </div>
+    <nav className={`w-full fixed top-0 left-0 z-30 transition-colors ${navBg}`}>
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
+          <img src={logo} alt="Culture Farms Logo" className="h-16 logo-ring" />
+          {/* <span className={`font-semibold ${textColor}`}>Culture Farms</span> */}
+        </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="text-white hover:text-yellow-300 font-semibold transition-colors duration-200 text-lg"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-white hover:text-yellow-300 font-semibold transition-colors duration-200 text-lg"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => scrollToSection('shop')}
-              className="text-white hover:text-yellow-300 font-semibold transition-colors duration-200 text-lg"
-            >
-              Shop With Us
-            </button>
-          </div>
+        {/* Desktop links */}
+        <div className={`hidden md:flex items-center gap-6`}>
+          <button onClick={() => scrollToSection('home')} className={`text-sm font-semibold ${textColor} hover:text-[var(--cf-mid-green)]`}>Home</button>
+          <button onClick={() => scrollToSection('shop')} className={`text-sm font-semibold ${textColor} hover:text-[var(--cf-mid-green)]`}>Shop</button>
+          <button onClick={() => scrollToSection('about')} className={`text-sm font-semibold ${textColor} hover:text-[var(--cf-mid-green)]`}>About Us</button>
+        </div>
 
-          {/* Mobile Menu Button */}
+        {/* Mobile menu toggle */}
+        <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-yellow-300 transition-colors"
+            className={`${textColor} p-1`}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-green-700 to-green-600 border-t border-green-500 shadow-lg">
-          <div className="px-4 py-4 space-y-3">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="block w-full text-left text-white hover:text-yellow-300 hover:bg-green-800/50 font-semibold py-3 px-4 rounded transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-white hover:text-yellow-300 hover:bg-green-800/50 font-semibold py-3 px-4 rounded transition-colors"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => scrollToSection('shop')}
-              className="block w-full text-left text-white hover:text-yellow-300 hover:bg-green-800/50 font-semibold py-3 px-4 rounded transition-colors"
-            >
-              Shop With Us
-            </button>
+        <div className="md:hidden px-4 pb-4">
+          <div className="flex flex-col gap-3 bg-[rgba(255,255,255,0.02)] rounded-lg p-3 shadow-sm">
+            <button onClick={() => scrollToSection('home')} className="text-left text-white/90 font-semibold py-2">Home</button>
+            <button onClick={() => scrollToSection('shop')} className="text-left text-white/90 font-semibold py-2">Shop</button>
+            <button onClick={() => scrollToSection('about')} className="text-left text-white/90 font-semibold py-2">About Us</button>
           </div>
         </div>
       )}

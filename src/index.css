@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+:root {
+  --cf-dark-green: #0E8A4A;
+  --cf-mid-green:  #59B24A;
+  --cf-light-green:#B8DB4A;
+  --cf-yellow:     #F2C41A;
+  --cf-bg:         #F3F8F4; /* soft off-white so not a lot of white */
+  --cf-card:       rgba(14,138,74,0.06);
+  --cf-text-strong: rgba(14,138,74,0.95);
+}
+
+/* hero / section backgrounds */
+.bg-cf-hero{
+  background: linear-gradient(135deg, var(--cf-mid-green) 0%, var(--cf-light-green) 60%);
+  color: white;
+}
+
+/* reusable button */
+.btn-cf{
+  background: var(--cf-dark-green);
+  color: white;
+  transition: background .2s, transform .15s, box-shadow .15s;
+}
+.btn-cf:hover{ background: var(--cf-mid-green); transform: translateY(-2px); }
+
+/* subtle card background */
+.card-cf{
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), var(--cf-bg));
+  border: 1px solid rgba(14,138,74,0.06);
+  box-shadow: 0 6px 18px rgba(14,138,74,0.06);
+}
+
+/* badge (availability) */
+.badge-year{ background: var(--cf-mid-green); color: white; }
+.badge-season{ background: var(--cf-yellow); color: #1d3320; }
+
+/* small utilities */
+.text-cf-dark{ color: var(--cf-text-strong); }
+.text-cf-mid{ color: var(--cf-mid-green); }
+.bg-muted{ background: var(--cf-bg); }
+.footer-faint{ color: rgba(255,255,255,0.9); }
+.logo-ring{ filter: drop-shadow(0 6px 12px rgba(14,138,74,0.08)); }
+
+/* Hide blinking text caret (insertion caret) for everything except real form controls
+   and contenteditable fields, and remove focus outline that shows near text. */
+*:not(input):not(textarea):not(select):not([contenteditable]) {
+  caret-color: transparent !important;
+}
+
+/* Remove focus outline/caret visuals site-wide (keep only for form controls if needed) */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep interactive cursor for links and buttons */
+a, button, [role="button"] {
+  cursor: pointer;
+}
