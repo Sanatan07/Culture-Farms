@@ -37,7 +37,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Culture Farms Logo"
-            className="h-10 logo-ring object-contain opacity-100"
+            className="h-15 logo-ring object-contain opacity-100"
             style={{ opacity: 1 }}
           />
         </div>
@@ -50,6 +50,15 @@ export default function Navbar() {
           >
             Home
           </button>
+
+          {/* new tag (different name) linking to ProductBenefits section */}
+          <button
+            onClick={() => scrollToSection('benefits')}
+            className={`text-base font-semibold ${textColorClass} hover:text-[var(--cf-mid-green)]`}
+          >
+            Wellness
+          </button>
+
           <button
             onClick={() => scrollToSection('shop')}
             className={`text-base font-semibold ${textColorClass} hover:text-[var(--cf-mid-green)]`}
@@ -81,6 +90,7 @@ export default function Navbar() {
         <div className="md:hidden px-4 pb-4 bg-white/80 border-t border-[rgba(14,138,74,0.04)]">
           <div className="flex flex-col gap-3 rounded-lg p-3">
             <button onClick={() => scrollToSection('home')} className="text-left text-[var(--cf-dark-green)] font-semibold py-3 text-base">Home</button>
+            <button onClick={() => scrollToSection('benefits')} className="text-left text-[var(--cf-dark-green)] font-semibold py-3 text-base">Wellness</button>
             <button onClick={() => scrollToSection('shop')} className="text-left text-[var(--cf-dark-green)] font-semibold py-3 text-base">Shop</button>
             <button onClick={() => scrollToSection('about')} className="text-left text-[var(--cf-dark-green)] font-semibold py-3 text-base">About Us</button>
           </div>

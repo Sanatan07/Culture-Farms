@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Leaf } from 'lucide-react';
 import moringa1 from '../../public/assets/moringa1.jpg';
 import moringa2 from '../../public/assets/moringa2.jpg';
@@ -46,6 +47,19 @@ export default function Shop() {
     }
   ];
 
+  // track which image to show for each product (0 -> image1, 1 -> image2)
+  const [visibleIndices, setVisibleIndices] = useState(() => products.map(() => 0));
+
+  const toggleImage = (prodIndex) => {
+    const prod = products[prodIndex];
+    if (!prod.image2) return; // nothing to toggle
+    setVisibleIndices((prev) => {
+      const copy = [...prev];
+      copy[prodIndex] = copy[prodIndex] === 0 ? 1 : 0;
+      return copy;
+    });
+  };
+
   return (
     <section id="shop" className="py-10 bg-muted">
       <div className="max-w-6xl mx-auto px-4">
@@ -64,16 +78,17 @@ export default function Shop() {
             return (
               <div key={index} className="card-cf rounded-2xl p-6 hover:shadow-xl transition-all">
                 {product.image1 ? (
-                  <div className="relative w-full h-48 rounded-xl mb-6 overflow-hidden bg-white group">
+                  <div
+                    className="w-full rounded-xl mb-6 overflow-visible bg-white flex items-center justify-center"
+                    style={{ cursor: product.image2 ? 'pointer' : 'default' }}
+                    onClick={() => toggleImage(index)}
+                    aria-label={product.image2 ? `Toggle ${product.name} image` : undefined}
+                  >
+                    {/* show full image (natural size constrained by container width) */}
                     <img
-                      src={product.image1}
-                      alt={`${product.name} 1`}
-                      className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
-                    />
-                    <img
-                      src={product.image2}
-                      alt={`${product.name} 2`}
-                      className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      src={visibleIndices[index] === 0 ? product.image1 : product.image2}
+                      alt={`${product.name} image`}
+                      className="max-w-full h-auto object-contain"
                     />
                   </div>
                 ) : (

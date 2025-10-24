@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="min-h-screen flex items-center justify-center bg-muted py-[10px]">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-[var(--cf-dark-green)] mb-8 text-center">
-          ABOUT CULTURE FARMS — ROOTED IN SOIL, GROWN WITH PURPOSE
+          About Culture Farms
         </h2>
 
         <div className="space-y-6 text-lg text-[var(--cf-dark-green)] leading-relaxed">
