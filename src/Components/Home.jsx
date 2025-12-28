@@ -295,7 +295,7 @@ export default function Home() {
 
           <div className="bg-white bg-opacity-95 rounded-2xl p-6 md:p-8 max-w-2xl mx-auto mb-6 shadow-2xl">
             <div className="text-5xl md:text-7xl font-bold text-red-600 mb-3">
-              ₹50 OFF
+              40% OFF
             </div>
             <div className="text-xl md:text-2xl text-green-800 font-semibold mb-2">
               On Your First WhatsApp Order
