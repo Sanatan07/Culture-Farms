@@ -46,16 +46,6 @@ export default function Home() {
               alt={`Slide ${idx + 1}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
-              >
-                🟢 Order on WhatsApp
-              </a>
-            </div>
           </div>
         ))}
       </div>
